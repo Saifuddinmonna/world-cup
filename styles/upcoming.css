@@ -1,0 +1,41 @@
+
+/* .upcomin-container start from here  */
+.nab-main-container-flex{
+    display: flex;
+    margin-top: 120px;
+}
+
+.main-container{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap:24px ;
+    margin: 15px;
+}
+
+.upcomin-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #e8e8e810;
+    border: 1px solid #e8e8e88c;
+    border-radius: 10px;
+    padding: 30px;
+     cursor: pointer;
+}
+.flag-container{
+    display: flex;
+   
+}
+
+.flag img{
+    width: 94.04px;
+    height: 57.18px;
+    
+}
+.information{
+    text-align: center;
+
+}
+.information h2{
+    font-size: 19px;
+}

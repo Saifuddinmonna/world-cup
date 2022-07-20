@@ -1,0 +1,365 @@
+
+/* google font stat from here  */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,700;0,800;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
+/* common style and utilities stat from here  */
+/* *{
+    margin: 0px;
+    padding: 0px;
+} */
+
+body{
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-right: 0px;
+}
+/* header css start here  */
+header{
+    width: 1321px;
+    height: 646px;
+    background: #161616;
+    border-radius: 30px;  
+    display: flex;  
+    justify-content: space-around; 
+}
+.header-info{
+    width: 531px;
+    height: 424px;
+    margin-left: 40px;
+
+}
+.header-title{
+    color: #FFFFFF;
+    font-size: 70px;
+    line-height: 80px;
+}
+.header-paragraph{
+    color: #FFFFFF;
+    margin-bottom: 30px;
+}
+.header-btn{
+    width: 187px;
+    height: 56px;
+    background: #DD0000;
+    border-radius: 6px;
+    transition: ease-out 1s;
+
+}
+.header-btn:hover{
+background-color: #fed01859;
+}   
+
+.header-btn a{
+    color: #FFFFFF;
+    font-size: 20px;
+    font-weight: bolder ;
+    text-decoration: none;
+    
+}
+.header-thumbnail img{
+    width: 581px;
+    height: 613px;
+}
+/* main section start here  */
+/* navi start from here  */
+.nab-article-fkex{
+    display: flex;
+    align-items: start;
+    margin-top: 120px;
+}
+nav{
+    background: #161616;
+    width: 312px;
+    height: 312px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 15px;
+}
+.nab-btn {
+    width: 252px;
+    height: 64px;
+    background: #FFFFFF;
+    border-radius: 10px;
+    margin: 15px;
+}
+.nab-btn.red{
+    background: #DD0000;
+    border-radius: 10px;
+}
+.nab-btn a{
+    font-size: 18px;
+    text-decoration: none;
+    color: #161616;
+}
+/* articles start from here  */
+.articles{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-gap: 24px;
+     margin: 15px;
+}
+.article-btn >button{
+    font-weight: bold;
+    color: #161616;
+    width: 100px;
+    height: 32px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: ease 2s;
+}
+.article-btn >button:hover{
+    background-color: #9d3c3c;
+}
+.paragraph{
+    width: 272px;
+    font-weight: 600;
+    font-size: 18px;
+    Fill: Solid
+    #161616
+}
+
+
+ /* footer start drom here  */
+ .footer-container{
+    width: 1321px;
+    height: 400px;
+    background: #161616;
+    text-align: center;
+    padding-top: 10px;
+    border: 10px 10px 10px 10px gray;
+    border-radius: 10px;
+ }
+ .footer-title h2{
+   color: #FFFFFF;
+   font-size: 40px;
+   margin: 20px;
+   padding-top: 20px;
+ }
+  .footer-button{
+    border: 1px solid rgba(128, 128, 128, 0.182);
+    border-radius: 15px;
+    font-size: 25px;
+    background-color: rgba(128, 128, 128, 0);
+    padding-bottom: 2px;
+    margin: 20px;
+  }
+   .footer-button a{
+   color: #B9B9B9;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 100;
+    font-style: italic;
+ }
+
+ .social-app{
+    margin: 20px;
+ }
+
+ .social-app a{
+    color: rgba(255, 255, 255, 0.839);
+     text-decoration: none;
+     font-size: 14px;
+     padding: 20px;
+ }
+ 
+ .social-app i{
+    color: rgba(255, 255, 255, 0.961);
+    font-size: 15px;
+    border-radius: 10px;
+   
+   
+ }
+ .footer-copyright p {
+    color: #B9B9B9;
+    margin:20px ;
+
+ }
+.footer-copyright a[href]{
+    color: #ff0077b9;
+ }
+
+/* ----------------------------------------------respondsive web page start here ---------------------------------- */
+
+/* mobile phone resposive css start from here  */
+
+@media only screen and (max-width: 688px) {
+  body {
+    background-color: rgb(255, 0, 153);
+    box-sizing: border-box;
+    }
+
+  header {
+    flex-direction: column;
+    width: 100%;
+    height:auto;
+    justify-content: center;
+  }
+  .header-info{
+    width: 90%;
+    height: 90%;
+    align-items: center;
+    text-align: center;
+    padding-bottom: 20px;
+
+
+}
+.header-title{
+    Font-size: 30px;
+    line-height: normal;
+}
+.header-btn{
+    margin: auto;
+
+}
+
+.header-thumbnail img{
+    width:100%;
+    height: auto;
+
+}
+
+.nab-article-fkex{
+    flex-direction: column;
+}
+
+.articles{
+    grid-template-columns:1fr ;
+    grid-template-rows:repeat(9,1fr);
+    grid-gap: 24px;
+     margin: 15px;
+}
+.footer-container{
+    width: 100%;
+    height: auto;
+    background: #161616;
+    text-align: center;
+    padding-top: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 10px 10px 10px 10px gray;
+    border-radius: 10px;
+ }
+.footer-button {
+    display: inline-block;
+    display: flex;
+    align-items:center ;
+    
+    }
+.social-app a[href] {
+    display: block;
+    font-size: 11px;
+    }
+.social-app .fa-brands{
+    font-size: 11px;
+}
+
+    }
+
+
+    /* ----------------------------------------------------responsive for tablate css start from here ---------------------------------------------- */
+
+
+@media  screen and (min-width: 679px) and (max-width: 992px) 
+    {
+    body {
+    background-color: rgba(214, 221, 218, 0.115);
+    box-sizing: border-box;}
+
+
+
+    header {
+    width: 100%;
+    height: auto;
+    background: #161616;
+    border-radius: 30px;  
+    display: flex;  
+    justify-content: space-around; 
+    margin: 5px;
+    
+  }
+  .header-info{
+    width: 100%;
+    height: auto;
+    
+
+}
+.header-title{
+    Font-size: 30px;
+    line-height: normal;
+}
+.header-btn{
+    margin: auto;
+
+}
+
+.header-thumbnail img{
+    width:100%;
+    height: auto;
+
+}
+ nav{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 97%;
+    height: auto;
+    margin: 5px;
+    background-color: rgba(128, 128, 128, 0.087);
+ }
+ .nab-btn {
+    width: 195px;
+    height: 64px;
+    background: #FFFFFF;
+    border-radius: 10px;
+    margin: 5px;
+}
+.nab-article-fkex{
+    flex-direction: column;
+}
+
+.articles{
+    grid-template-columns:1fr 1fr ;
+    grid-template-rows:auto;
+    grid-gap: 24px;
+     margin: 15px;
+}
+.footer-container{
+    width: 100%;
+    height: auto;
+    background: #161616;
+    text-align: center;
+    padding-top: auto;
+    align-items: center;
+    border: 10px 10px 10px 10px gray;
+    border-radius: 10px;
+ }
+ .footer-title h2{
+   color: #FFFFFF;
+   font-size: 20px;
+   margin: 5px;
+   padding-top: px;
+ }
+
+.footer-button {
+   
+   
+    
+    }
+    .footer-button a{
+        font-size: 11px;
+    }
+.social-app a[href] {
+
+    font-size: 11px;
+    }
+.social-app .fa-brands{
+    font-size: 13px;
+}
+
+     }
+    
+     
