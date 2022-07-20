@@ -1,7 +1,11 @@
 
-/* google font stat from here  */
+/* ---------------------------------
+google font stat from here 
+-------------------------------------- */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,700;0,800;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
-/* common style and utilities stat from here  */
+/* -------------------------------------------
+common style and utilities stat from here 
+------------------------------------------- */
 *{
     margin: 0px;
     padding: 0px;
@@ -18,10 +22,17 @@ body{
 header{
     width: 1321px;
     height: 646px;
+    padding-top: 20px;
     background: #161616;
-    border-radius: 30px;  
+    border-radius: 15px;  
     display: flex;  
     justify-content: space-around; 
+    transition: ease;
+    transition-duration: 2.5s;
+}
+
+header:hover{
+    background-color: rgba(255, 0, 0, 0.248);
 }
 .header-info{
     width: 531px;
@@ -47,7 +58,7 @@ header{
 
 }
 .header-btn:hover{
-background-color: #fed01859;
+    background-color: #fed01859;
 }   
 
 .header-btn a{
@@ -84,7 +95,10 @@ nav{
     background: #FFFFFF;
     border-radius: 10px;
     margin: 15px;
+    
 }
+
+
 .nab-btn.red{
     background: #DD0000;
     border-radius: 10px;
@@ -93,6 +107,7 @@ nav{
     font-size: 18px;
     text-decoration: none;
     color: #161616;
+    
 }
 /* articles start from here  */
 .articles{
@@ -100,6 +115,7 @@ nav{
     grid-template-columns: repeat(3,1fr);
     grid-gap: 24px;
      margin: 15px;
+     cursor: pointer;
 }
 .article-btn >button{
     font-weight: bold;
@@ -128,7 +144,7 @@ nav{
     height: 400px;
     background: #161616;
     text-align: center;
-    padding-top: 10px;
+    padding-top: 20px;
     border: 10px 10px 10px 10px gray;
     border-radius: 10px;
  }
@@ -136,7 +152,7 @@ nav{
    color: #FFFFFF;
    font-size: 25px;
    font-weight: 100;
-   margin: 20px;
+   margin-top:  20px;
    padding-top: 20px;
  }
   .footer-button{
@@ -145,7 +161,8 @@ nav{
     font-size: 25px;
     background-color: rgba(128, 128, 128, 0);
     padding-bottom: 2px;
-    margin: 20px;
+    margin: 15px;
+    
   }
    .footer-button a{
    color: #B9B9B9;
@@ -153,25 +170,30 @@ nav{
     font-size:11px;
     font-weight: 100;
     font-style: italic;
+    
  }
 
  .social-app{
-    margin: 20px;
+   
  }
 
  .social-app a{
     color: rgba(255, 255, 255, 0.839);
      text-decoration: none;
      font-size: x-small;
-     padding: 20px;
+     padding: 10px;
  }
  
  .social-app i{
     color: rgba(255, 255, 255, 0.961);
     font-size: 15px;
-    border-radius: 10px;
+    border-radius: 0px;
    
    
+ }
+ .footer-copyright{
+    
+    padding-bottom:20px;
  }
  .footer-copyright p {
     color: #B9B9B9;
@@ -259,10 +281,10 @@ nav{
     }
 .social-app a[href] {
     display: block;
-    font-size: 11px;
+    
     }
 .social-app .fa-brands{
-    font-size: 11px;
+   
 }
 
     }
@@ -354,7 +376,7 @@ nav{
  }
 
 .footer-button {
-   
+  
    
     
     }
@@ -362,11 +384,11 @@ nav{
         font-size: 11px;
     }
 .social-app a[href] {
-
-    font-size: 11px;
+    margin: 5px;
+    font-size: xx-small;
     }
 .social-app .fa-brands{
-    font-size: 13px;
+    font-size: 11px;
 }
 
      }
