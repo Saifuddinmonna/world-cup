@@ -134,7 +134,8 @@ nav{
  }
  .footer-title h2{
    color: #FFFFFF;
-   font-size: 40px;
+   font-size: 25px;
+   font-weight: 100;
    margin: 20px;
    padding-top: 20px;
  }
@@ -149,7 +150,7 @@ nav{
    .footer-button a{
    color: #B9B9B9;
     text-decoration: none;
-    font-size: 13px;
+    font-size:11px;
     font-weight: 100;
     font-style: italic;
  }
@@ -161,7 +162,7 @@ nav{
  .social-app a{
     color: rgba(255, 255, 255, 0.839);
      text-decoration: none;
-     font-size: 14px;
+     font-size: x-small;
      padding: 20px;
  }
  
@@ -174,11 +175,13 @@ nav{
  }
  .footer-copyright p {
     color: #B9B9B9;
+    font-size: x-small;
     margin:20px ;
 
  }
 .footer-copyright a[href]{
     color: #ff0077b9;
+    font-size: xx-small;
  }
 
 /* ----------------------------------------------respondsive web page start here ---------------------------------- */
