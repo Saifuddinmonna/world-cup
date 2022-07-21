@@ -50,5 +50,6 @@
     margin: 10px;
     cursor: pointer;  
 }
-
+    .view-btn{
+   visibility: visible;}
 }

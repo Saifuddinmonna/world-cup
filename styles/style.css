@@ -165,6 +165,7 @@ button:hover{
 border-radius: 8px;
 padding: 8px 21px;
 gap: 10px;
+font-weight: bolder ;
 text-decoration: none;
 visibility:hidden;
 }
@@ -195,8 +196,8 @@ visibility:hidden;
     border-radius: 15px;
     font-size: 25px;
     background-color: rgba(128, 128, 128, 0);
-    padding-bottom: 2px;
-    margin: 15px;
+    padding-bottom: 10px;
+    margin: 25px;
     
   }
    .footer-button a{
@@ -422,7 +423,7 @@ nav{
     margin: 5px;
     font-size: xx-small;
     }
-    
+
 .social-app .fa-brands{
     font-size: 11px;
 }
