@@ -160,12 +160,13 @@ button:hover{
     #161616
 }
 
-.view-all button{
+.view-btn {
     background: #dd0000bf;
 border-radius: 8px;
-padding: 12px 29px;
+padding: 8px 21px;
 gap: 10px;
-display:hidden;
+text-decoration: none;
+visibility:hidden;
 }
  /* footer start drom here  */
  .footer-container{
@@ -394,7 +395,7 @@ nav{
      margin: 15px;
 }
 
-.view-all button{
+.view-btn{
    visibility: visible;
 }
 .footer-container{
@@ -414,11 +415,6 @@ nav{
    padding-top: px;
  }
 
-.footer-button {
-  
-   
-    
-    }
     .footer-button a{
         font-size: 11px;
     }
@@ -426,12 +422,11 @@ nav{
     margin: 5px;
     font-size: xx-small;
     }
+    
 .social-app .fa-brands{
     font-size: 11px;
 }
 
      }
     
-.view-all> button{
-    visibility: visible;
-}
+
