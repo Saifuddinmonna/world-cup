@@ -160,7 +160,13 @@ button:hover{
     #161616
 }
 
-
+.view-all button{
+    background: #dd0000bf;
+border-radius: 8px;
+padding: 12px 29px;
+gap: 10px;
+display:hidden;
+}
  /* footer start drom here  */
  .footer-container{
     width: 1321px;
@@ -387,6 +393,10 @@ nav{
     grid-gap: 24px;
      margin: 15px;
 }
+
+.view-all button{
+   visibility: visible;
+}
 .footer-container{
     width: 100%;
     height: auto;
@@ -422,3 +432,6 @@ nav{
 
      }
     
+.view-all> button{
+    visibility: visible;
+}
