@@ -101,19 +101,33 @@ nav{
     border-radius: 10px;
     margin: 15px;
     cursor: pointer;
-    
+    display: inline-block;
+      transition: ease;
+    transition-duration: 2s;
+   
 }
 
 
 .nab-btn.red{
-    background: #DD0000;
+    background: #e71a1ad9;
     border-radius: 10px;
 }
 .nab-btn a{
-    font-size: 18px;
+    display: inline-block;
+    font-size: 20px;
+    color: #FFFFFF;
+    font-weight: bolder;
     text-decoration: none;
     color: #161616;
-    
+    position: relative;    
+   z-index: 1;     
+   padding: 2em;     
+   margin: -2em;
+  
+}
+button:hover{
+    background-color: #9d3c3c7f;
+    color: azure;
 }
 /* articles start from here  */
 .articles{

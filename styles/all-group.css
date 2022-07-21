@@ -1,0 +1,15 @@
+
+*{
+    margin: auto;
+    padding: auto;
+    box-sizing: border-box;
+}
+.section-info{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    grid-gap: 24px;
+     margin: 15px;
+     cursor: pointer;
+     display: none;
+
+}
