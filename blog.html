@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>World Cup Blog</title>
+    <!-- fontawesome link here -->
+    <script src="https://kit.fontawesome.com/ecb4d0e7a3.js" crossorigin="anonymous"></script>
+    <!-- css link here -->
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="styles/navbar.css">
+    <link rel="stylesheet" href="styles/blog.css">
+    <link rel="stylesheet" href="styles/typography.css">
+</head>
+
+<body>
+    <!-- Modern Navbar -->
+    <nav class="navbar">
+        <div class="navbar-container">
+            <a href="index.html" class="navbar-logo">World Cup</a>
+            <button class="navbar-toggle" aria-label="Toggle navigation">
+                <i class="fas fa-bars"></i>
+            </button>
+            <ul class="navbar-menu">
+                <li class="navbar-item"><a href="index.html" class="navbar-link">Home</a></li>
+                <li class="navbar-item"><a href="upcoming.html" class="navbar-link">Upcoming Match</a></li>
+                <li class="navbar-item"><a href="all-group.html" class="navbar-link">All Group</a></li>
+                <li class="navbar-item"><a href="blog.html" class="navbar-link active">Blog</a></li>
+                <li class="navbar-item"><a href="contact.html" class="navbar-link">Contact</a></li>
+            </ul>
+            <button class="navbar-btn">
+                <i class="fas fa-play"></i>
+                Watch Live
+            </button>
+        </div>
+    </nav>
+
+    <div class="blog-container">
+        <div class="blog-header">
+            <h1 class="blog-title">World Cup News & Updates</h1>
+            <p class="blog-description">Stay updated with the latest news, match reports, and insights from the world of football.</p>
+        </div>
+
+        <div class="blog-grid" id="blogGrid">
+            <!-- Blog posts will be loaded here -->
+        </div>
+
+        <div class="pagination" id="pagination">
+            <!-- Pagination buttons will be added here -->
+        </div>
+    </div>
+
+    <script>
+        // Blog data with real World Cup information
+        const blogPosts = [
+            {
+                title: "Argentina Wins 2022 World Cup in Dramatic Final",
+                category: "Match Report",
+                image: "images/blog/argentina-win.jpg",
+                excerpt: "Lionel Messi leads Argentina to World Cup glory in a thrilling final against France, winning 4-2 on penalties after a 3-3 draw.",
+                date: "December 18, 2022",
+                author: "John Smith"
+            },
+            {
+                title: "Morocco Makes History as First African Semi-Finalist",
+                category: "Historic Moment",
+                image: "images/blog/morocco.jpg",
+                excerpt: "Morocco becomes the first African nation to reach the World Cup semi-finals, defeating Portugal 1-0 in the quarter-finals.",
+                date: "December 10, 2022",
+                author: "Sarah Johnson"
+            },
+            {
+                title: "Brazil's Early Exit Shocks Football World",
+                category: "Breaking News",
+                image: "images/blog/brazil.jpg",
+                excerpt: "Five-time champions Brazil suffer a shock quarter-final exit against Croatia, losing 4-2 on penalties after a 1-1 draw.",
+                date: "December 9, 2022",
+                author: "Carlos Rodriguez"
+            },
+            {
+                title: "Mbappé's Hat-trick in Final Makes History",
+                category: "Player Spotlight",
+                image: "images/blog/mbappe.jpg",
+                excerpt: "Kylian Mbappé becomes only the second player to score a hat-trick in a World Cup final, joining Geoff Hurst's 1966 feat.",
+                date: "December 18, 2022",
+                author: "Marie Laurent"
+            },
+            {
+                title: "Qatar's Legacy: First Middle Eastern World Cup",
+                category: "Tournament Review",
+                image: "images/blog/qatar.jpg",
+                excerpt: "A look back at Qatar's historic hosting of the first World Cup in the Middle East and its impact on the region.",
+                date: "December 19, 2022",
+                author: "Ahmed Hassan"
+            },
+            {
+                title: "Japan's Group Stage Upset Against Germany",
+                category: "Match Report",
+                image: "images/blog/japan.jpg",
+                excerpt: "Japan stuns Germany with a 2-1 comeback victory in their opening group stage match, setting the tone for a tournament of upsets.",
+                date: "November 23, 2022",
+                author: "Yuki Tanaka"
+            },
+            {
+                title: "Saudi Arabia's Historic Win Over Argentina",
+                category: "Historic Moment",
+                image: "images/blog/saudi.jpg",
+                excerpt: "Saudi Arabia pulls off one of the biggest upsets in World Cup history, defeating Argentina 2-1 in their opening match.",
+                date: "November 22, 2022",
+                author: "Mohammed Al-Farsi"
+            },
+            {
+                title: "Croatia's Bronze Medal Victory",
+                category: "Match Report",
+                image: "images/blog/croatia.jpg",
+                excerpt: "Croatia secures third place with a 2-1 victory over Morocco, continuing their impressive World Cup record.",
+                date: "December 17, 2022",
+                author: "Ivan Kovac"
+            },
+            {
+                title: "Record-Breaking Attendance at Lusail Stadium",
+                category: "Tournament Review",
+                image: "images/blog/lusail.jpg",
+                excerpt: "The 2022 World Cup final sets a new attendance record at the Lusail Stadium, with 88,966 fans witnessing the historic match.",
+                date: "December 18, 2022",
+                author: "David Wilson"
+            },
+            {
+                title: "Messi's Golden Ball Achievement",
+                category: "Player Spotlight",
+                image: "images/blog/messi.jpg",
+                excerpt: "Lionel Messi wins the Golden Ball award for the second time, becoming the first player to achieve this feat.",
+                date: "December 18, 2022",
+                author: "Luis Garcia"
+            },
+            {
+                title: "VAR Controversies in the Tournament",
+                category: "Analysis",
+                image: "images/blog/var.jpg",
+                excerpt: "A comprehensive analysis of VAR decisions and their impact on the 2022 World Cup matches.",
+                date: "December 15, 2022",
+                author: "Emma Thompson"
+            },
+            {
+                title: "South Korea's Dramatic Group Stage Exit",
+                category: "Match Report",
+                image: "images/blog/south-korea.jpg",
+                excerpt: "South Korea's valiant effort falls short as they exit the tournament despite a 2-1 victory over Portugal.",
+                date: "December 2, 2022",
+                author: "Park Ji-Sung"
+            },
+            {
+                title: "England's Quarter-Final Heartbreak",
+                category: "Match Report",
+                image: "images/blog/england.jpg",
+                excerpt: "England's World Cup journey ends in the quarter-finals with a 2-1 defeat to France, despite a strong performance.",
+                date: "December 10, 2022",
+                author: "James Wilson"
+            },
+            {
+                title: "Netherlands' Comeback Against Argentina",
+                category: "Match Report",
+                image: "images/blog/netherlands.jpg",
+                excerpt: "The Netherlands stages a dramatic late comeback against Argentina, forcing extra time before losing on penalties.",
+                date: "December 9, 2022",
+                author: "Jan de Vries"
+            },
+            {
+                title: "Portugal's Ronaldo Controversy",
+                category: "Breaking News",
+                image: "images/blog/ronaldo.jpg",
+                excerpt: "Cristiano Ronaldo's benching and subsequent exit from the tournament sparks debate about his international future.",
+                date: "December 10, 2022",
+                author: "Miguel Santos"
+            },
+            {
+                title: "Australia's Historic Round of 16 Appearance",
+                category: "Historic Moment",
+                image: "images/blog/australia.jpg",
+                excerpt: "Australia reaches the Round of 16 for only the second time in their history, marking a significant achievement.",
+                date: "December 3, 2022",
+                author: "Tim Cahill"
+            },
+            {
+                title: "Senegal's Strong Performance",
+                category: "Team Analysis",
+                image: "images/blog/senegal.jpg",
+                excerpt: "Senegal impresses in the tournament despite missing their star player, reaching the Round of 16.",
+                date: "December 4, 2022",
+                author: "Amadou Diallo"
+            },
+            {
+                title: "USA's Promising Young Squad",
+                category: "Team Analysis",
+                image: "images/blog/usa.jpg",
+                excerpt: "The United States shows promise with their young squad, reaching the Round of 16 with an average age of 24.",
+                date: "December 3, 2022",
+                author: "Michael Bradley"
+            },
+            {
+                title: "Spain's Early Exit Despite Strong Start",
+                category: "Analysis",
+                image: "images/blog/spain.jpg",
+                excerpt: "Spain's tournament ends in disappointment as they exit in the Round of 16 despite a dominant group stage performance.",
+                date: "December 6, 2022",
+                author: "Xavi Hernandez"
+            },
+            {
+                title: "Germany's Group Stage Elimination",
+                category: "Breaking News",
+                image: "images/blog/germany.jpg",
+                excerpt: "Germany fails to advance from the group stage for the second consecutive World Cup, marking a period of transition.",
+                date: "December 1, 2022",
+                author: "Klaus Fischer"
+            }
+        ];
+
+        // Pagination settings
+        const postsPerPage = 6;
+        let currentPage = 1;
+
+        // Function to display blog posts
+        function displayPosts(page) {
+            const startIndex = (page - 1) * postsPerPage;
+            const endIndex = startIndex + postsPerPage;
+            const postsToShow = blogPosts.slice(startIndex, endIndex);
+
+            const blogGrid = document.getElementById('blogGrid');
+            blogGrid.innerHTML = '';
+
+            postsToShow.forEach(post => {
+                const postElement = document.createElement('article');
+                postElement.className = 'blog-card';
+                postElement.innerHTML = `
+                    <img src="${post.image}" alt="${post.title}" class="blog-image">
+                    <div class="blog-content">
+                        <span class="blog-category">${post.category}</span>
+                        <h2 class="blog-card-title">${post.title}</h2>
+                        <p class="blog-excerpt">${post.excerpt}</p>
+                        <div class="blog-meta">
+                            <span><i class="far fa-calendar"></i> ${post.date}</span>
+                            <span><i class="far fa-user"></i> ${post.author}</span>
+                        </div>
+                    </div>
+                `;
+                blogGrid.appendChild(postElement);
+            });
+        }
+
+        // Function to update pagination
+        function updatePagination() {
+            const totalPages = Math.ceil(blogPosts.length / postsPerPage);
+            const pagination = document.getElementById('pagination');
+            pagination.innerHTML = '';
+
+            // Previous button
+            const prevButton = document.createElement('button');
+            prevButton.className = 'pagination-btn';
+            prevButton.innerHTML = '<i class="fas fa-chevron-left"></i>';
+            prevButton.disabled = currentPage === 1;
+            prevButton.onclick = () => {
+                if (currentPage > 1) {
+                    currentPage--;
+                    displayPosts(currentPage);
+                    updatePagination();
+                }
+            };
+            pagination.appendChild(prevButton);
+
+            // Page numbers
+            for (let i = 1; i <= totalPages; i++) {
+                const pageButton = document.createElement('button');
+                pageButton.className = `pagination-btn ${i === currentPage ? 'active' : ''}`;
+                pageButton.textContent = i;
+                pageButton.onclick = () => {
+                    currentPage = i;
+                    displayPosts(currentPage);
+                    updatePagination();
+                };
+                pagination.appendChild(pageButton);
+            }
+
+            // Next button
+            const nextButton = document.createElement('button');
+            nextButton.className = 'pagination-btn';
+            nextButton.innerHTML = '<i class="fas fa-chevron-right"></i>';
+            nextButton.disabled = currentPage === totalPages;
+            nextButton.onclick = () => {
+                if (currentPage < totalPages) {
+                    currentPage++;
+                    displayPosts(currentPage);
+                    updatePagination();
+                }
+            };
+            pagination.appendChild(nextButton);
+        }
+
+        // Initial display
+        displayPosts(currentPage);
+        updatePagination();
+    </script>
+
+    <!-- Navbar JavaScript -->
+    <script>
+        // Navbar scroll effect
+        window.addEventListener('scroll', () => {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // Mobile menu toggle
+        const navbarToggle = document.querySelector('.navbar-toggle');
+        const navbarMenu = document.querySelector('.navbar-menu');
+
+        navbarToggle.addEventListener('click', () => {
+            navbarMenu.classList.toggle('active');
+            navbarToggle.classList.toggle('active');
+        });
+
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!navbarToggle.contains(e.target) && !navbarMenu.contains(e.target)) {
+                navbarMenu.classList.remove('active');
+                navbarToggle.classList.remove('active');
+            }
+        });
+
+        // Active link highlighting
+        const navbarLinks = document.querySelectorAll('.navbar-link');
+        navbarLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                navbarLinks.forEach(l => l.classList.remove('active'));
+                link.classList.add('active');
+            });
+        });
+    </script>
+</body>
+</html> 

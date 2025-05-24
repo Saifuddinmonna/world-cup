@@ -11,18 +11,31 @@
     <script src="https://kit.fontawesome.com/ecb4d0e7a3.js" crossorigin="anonymous"></script>
     <!-- css link here -->
     <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="styles/navbar.css">
 </head>
 
 <body>
     <!-- -------------------------
         header start here 
     ------------------------ -->
-    <nav>
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="upcoming.html">Upcoming Match</a></li>
-            <li><a href="all-group.html">All Group</a></li>
-        </ul>
+    <nav class="navbar">
+        <div class="navbar-container">
+            <a href="index.html" class="navbar-logo">World Cup</a>
+            <button class="navbar-toggle" aria-label="Toggle navigation">
+                <i class="fas fa-bars"></i>
+            </button>
+            <ul class="navbar-menu">
+                <li class="navbar-item"><a href="index.html" class="navbar-link active">Home</a></li>
+                <li class="navbar-item"><a href="upcoming.html" class="navbar-link">Upcoming Match</a></li>
+                <li class="navbar-item"><a href="all-group.html" class="navbar-link">All Group</a></li>
+                <li class="navbar-item"><a href="news.html" class="navbar-link">News</a></li>
+                <li class="navbar-item"><a href="contact.html" class="navbar-link">Contact</a></li>
+            </ul>
+            <button class="navbar-btn">
+                <i class="fas fa-play"></i>
+                Watch Live
+            </button>
+        </div>
     </nav>
     <header>
         
@@ -120,6 +133,7 @@
     <!-- JavaScript file -->
     <script src="js/blog.js"></script>
     <script>
+    // Navbar scroll effect
     window.addEventListener('scroll', () => {
         const navbar = document.querySelector('.navbar');
         if (window.scrollY > 50) {
@@ -127,6 +141,32 @@
         } else {
             navbar.classList.remove('scrolled');
         }
+    });
+
+    // Mobile menu toggle
+    const navbarToggle = document.querySelector('.navbar-toggle');
+    const navbarMenu = document.querySelector('.navbar-menu');
+
+    navbarToggle.addEventListener('click', () => {
+        navbarMenu.classList.toggle('active');
+        navbarToggle.classList.toggle('active');
+    });
+
+    // Close mobile menu when clicking outside
+    document.addEventListener('click', (e) => {
+        if (!navbarToggle.contains(e.target) && !navbarMenu.contains(e.target)) {
+            navbarMenu.classList.remove('active');
+            navbarToggle.classList.remove('active');
+        }
+    });
+
+    // Active link highlighting
+    const navbarLinks = document.querySelectorAll('.navbar-link');
+    navbarLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            navbarLinks.forEach(l => l.classList.remove('active'));
+            link.classList.add('active');
+        });
     });
     </script>
 </body>
