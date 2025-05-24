@@ -17,6 +17,13 @@
     <!-- -------------------------
         header start here 
     ------------------------ -->
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="upcoming.html">Upcoming Match</a></li>
+            <li><a href="all-group.html">All Group</a></li>
+        </ul>
+    </nav>
     <header>
         
         <div class="header-info">
@@ -112,6 +119,16 @@
 
     <!-- JavaScript file -->
     <script src="js/blog.js"></script>
+    <script>
+    window.addEventListener('scroll', () => {
+        const navbar = document.querySelector('.navbar');
+        if (window.scrollY > 50) {
+            navbar.classList.add('scrolled');
+        } else {
+            navbar.classList.remove('scrolled');
+        }
+    });
+    </script>
 </body>
 </html>
                                                             

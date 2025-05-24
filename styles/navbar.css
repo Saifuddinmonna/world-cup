@@ -1,15 +1,32 @@
-/* Modern Navbar Styles */
+/* Modern Navbar Styles with Enhanced Animations */
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=Clash+Display:wght@400;500;600;700&family=General+Sans:wght@300;400;500;600;700&display=swap');
+
+:root {
+    --navbar-bg: rgba(22, 22, 22, 0.95);
+    --navbar-text: #FFFFFF;
+    --navbar-accent: #DD0000;
+    --navbar-hover: #ff3333;
+    --navbar-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    --navbar-transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
 .navbar {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    background: rgba(22, 22, 22, 0.95);
+    background: var(--navbar-bg);
     backdrop-filter: blur(10px);
-    padding: 1rem 2rem;
+    padding: 1.2rem 2rem;
     z-index: 1000;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    transition: all 0.3s ease;
+    box-shadow: var(--navbar-shadow);
+    transition: var(--navbar-transition);
+}
+
+.navbar.scrolled {
+    padding: 0.8rem 2rem;
+    background: rgba(22, 22, 22, 0.98);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
 }
 
 .navbar-container {
@@ -21,22 +38,42 @@
 }
 
 .navbar-logo {
-    font-size: 1.8rem;
+    font-family: 'Clash Display', sans-serif;
+    font-size: 2rem;
     font-weight: 700;
-    color: #FFFFFF;
+    color: var(--navbar-text);
     text-decoration: none;
-    transition: all 0.3s ease;
+    transition: var(--navbar-transition);
+    position: relative;
+    padding: 0.5rem 0;
+}
+
+.navbar-logo::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--navbar-accent);
+    transition: var(--navbar-transition);
 }
 
 .navbar-logo:hover {
-    color: #DD0000;
+    color: var(--navbar-accent);
     transform: scale(1.05);
+}
+
+.navbar-logo:hover::after {
+    width: 100%;
 }
 
 .navbar-menu {
     display: flex;
-    gap: 2rem;
+    gap: 2.5rem;
     list-style: none;
+    margin: 0;
+    padding: 0;
 }
 
 .navbar-item {
@@ -44,49 +81,107 @@
 }
 
 .navbar-link {
-    color: #FFFFFF;
-    text-decoration: none;
+    font-family: 'General Sans', sans-serif;
     font-size: 1.1rem;
     font-weight: 500;
+    color: var(--navbar-text);
+    text-decoration: none;
     padding: 0.5rem 1rem;
-    transition: all 0.3s ease;
+    transition: var(--navbar-transition);
+    position: relative;
+    display: inline-block;
 }
 
-.navbar-link:hover {
-    color: #DD0000;
-}
-
-.navbar-link::after {
+.navbar-link::before {
     content: '';
     position: absolute;
-    bottom: -2px;
+    bottom: 0;
     left: 50%;
     width: 0;
     height: 2px;
-    background: #DD0000;
-    transition: all 0.3s ease;
+    background: var(--navbar-accent);
+    transition: var(--navbar-transition);
     transform: translateX(-50%);
 }
 
-.navbar-link:hover::after {
+.navbar-link:hover {
+    color: var(--navbar-accent);
+    transform: translateY(-2px);
+}
+
+.navbar-link:hover::before {
     width: 100%;
 }
 
+/* Active Link Style */
+.navbar-link.active {
+    color: var(--navbar-accent);
+}
+
+.navbar-link.active::before {
+    width: 100%;
+}
+
+/* Navbar Button */
+.navbar-btn {
+    font-family: 'General Sans', sans-serif;
+    font-weight: 600;
+    font-size: 1rem;
+    padding: 0.8rem 1.5rem;
+    background: var(--navbar-accent);
+    color: var(--navbar-text);
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: var(--navbar-transition);
+    position: relative;
+    overflow: hidden;
+}
+
+.navbar-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 255, 255, 0.2),
+        transparent
+    );
+    transition: 0.5s;
+}
+
+.navbar-btn:hover {
+    background: var(--navbar-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(221, 0, 0, 0.3);
+}
+
+.navbar-btn:hover::before {
+    left: 100%;
+}
+
+/* Mobile Menu Button */
 .navbar-toggle {
     display: none;
     background: none;
     border: none;
-    color: #FFFFFF;
+    color: var(--navbar-text);
     font-size: 1.5rem;
     cursor: pointer;
-    transition: all 0.3s ease;
+    transition: var(--navbar-transition);
+    padding: 0.5rem;
 }
 
 .navbar-toggle:hover {
-    color: #DD0000;
+    color: var(--navbar-accent);
+    transform: rotate(90deg);
 }
 
-/* Responsive Design */
+/* Mobile Menu */
 @media screen and (max-width: 768px) {
     .navbar-toggle {
         display: block;
@@ -98,12 +193,12 @@
         left: -100%;
         width: 100%;
         height: calc(100vh - 70px);
-        background: rgba(22, 22, 22, 0.95);
+        background: var(--navbar-bg);
         backdrop-filter: blur(10px);
         flex-direction: column;
         align-items: center;
         padding: 2rem 0;
-        transition: all 0.3s ease;
+        transition: var(--navbar-transition);
     }
 
     .navbar-menu.active {
@@ -112,14 +207,28 @@
 
     .navbar-item {
         margin: 1rem 0;
+        opacity: 0;
+        transform: translateY(20px);
+        transition: var(--navbar-transition);
     }
+
+    .navbar-menu.active .navbar-item {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    .navbar-item:nth-child(1) { transition-delay: 0.1s; }
+    .navbar-item:nth-child(2) { transition-delay: 0.2s; }
+    .navbar-item:nth-child(3) { transition-delay: 0.3s; }
+    .navbar-item:nth-child(4) { transition-delay: 0.4s; }
+    .navbar-item:nth-child(5) { transition-delay: 0.5s; }
 }
 
-/* Animation for navbar items */
+/* Animations */
 @keyframes slideDown {
     from {
         opacity: 0;
-        transform: translateY(-10px);
+        transform: translateY(-20px);
     }
     to {
         opacity: 1;
@@ -127,13 +236,80 @@
     }
 }
 
-.navbar-item {
-    animation: slideDown 0.3s ease forwards;
-    opacity: 0;
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }
 
-.navbar-item:nth-child(1) { animation-delay: 0.1s; }
-.navbar-item:nth-child(2) { animation-delay: 0.2s; }
-.navbar-item:nth-child(3) { animation-delay: 0.3s; }
-.navbar-item:nth-child(4) { animation-delay: 0.4s; }
-.navbar-item:nth-child(5) { animation-delay: 0.5s; } 
+@keyframes scaleIn {
+    from {
+        transform: scale(0.9);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.navbar {
+    animation: slideDown 0.5s ease-out;
+}
+
+.navbar-logo {
+    animation: scaleIn 0.5s ease-out 0.2s both;
+}
+
+.navbar-item {
+    animation: fadeIn 0.5s ease-out forwards;
+}
+
+.navbar-item:nth-child(1) { animation-delay: 0.3s; }
+.navbar-item:nth-child(2) { animation-delay: 0.4s; }
+.navbar-item:nth-child(3) { animation-delay: 0.5s; }
+.navbar-item:nth-child(4) { animation-delay: 0.6s; }
+.navbar-item:nth-child(5) { animation-delay: 0.7s; }
+
+/* Hover Effects */
+.navbar-link::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: var(--navbar-accent);
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.3s ease;
+}
+
+.navbar-link:hover::after {
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
+/* Scroll Animation */
+.navbar.scrolled .navbar-logo {
+    transform: scale(0.95);
+}
+
+.navbar.scrolled .navbar-link {
+    font-size: 1rem;
+}
+
+/* Add this JavaScript to your HTML file for scroll animation */
+/*
+window.addEventListener('scroll', () => {
+    const navbar = document.querySelector('.navbar');
+    if (window.scrollY > 50) {
+        navbar.classList.add('scrolled');
+    } else {
+        navbar.classList.remove('scrolled');
+    }
+});
+*/ 
