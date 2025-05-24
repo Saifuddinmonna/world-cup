@@ -102,6 +102,7 @@ header {
     animation: fadeIn 1s ease-out;
     margin: 20px;
     box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    border-radius: 10px;
 }
 
 header:hover {
@@ -112,7 +113,7 @@ header:hover {
 
 .header-info {
     width: 531px;
-    height: 424px;
+    height: 324px;
     margin-left: 40px;
     animation: slideIn 1s ease-out;
 }
@@ -148,7 +149,7 @@ header:hover {
 
 .header-btn {
     width: 187px;
-    height: 56px;
+    height: 15px;
     background: #DD0000;
     border-radius: 6px;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -315,7 +316,7 @@ article:hover .paragraph {
     box-shadow: 0 5px 15px rgba(221, 0, 0, 0.3);
     background: #DD0000;
 }
- /* footer start drom here  */
+ /* footer start drom here 
  .footer-container{
     width: 1321px;
     height: 400px;
@@ -412,7 +413,240 @@ article:hover .paragraph {
     color: #ff0077;
     text-decoration: underline;
     transform: scale(1.1);
+} */
+
+/* ========================================= */
+/* Footer Styles */
+/* ========================================= */
+
+footer {
+    background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+    color: #ffffff;
+    padding: 80px 0 40px;
+    margin-top: 80px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.2);
 }
+
+.footer-container {
+    max-width: 1321px;
+    margin: 0 auto;
+    padding: 0 40px;
+    position: relative;
+    z-index: 1;
+}
+
+.footer-main-content {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 60px;
+    margin-bottom: 40px;
+}
+
+.footer-brand h2 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 20px;
+    position: relative;
+    display: inline-block;
+}
+
+.footer-brand h2::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 40px;
+    height: 3px;
+    background: #DD0000;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.footer-nav ul,
+.footer-social ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-nav ul li,
+.footer-social ul li {
+    margin-bottom: 15px;
+}
+
+.footer-nav ul li a,
+.footer-social ul li a {
+    color: #b3b3b3;
+    text-decoration: none;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 15px;
+    font-weight: 500;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    display: inline-block;
+    position: relative;
+    padding-left: 25px;
+}
+
+.footer-nav ul li a::before,
+.footer-social ul li a::before {
+    content: '→';
+    position: absolute;
+    left: 0;
+    opacity: 0;
+    transform: translateX(-10px);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.footer-nav ul li a:hover,
+.footer-social ul li a:hover {
+    color: #ffffff;
+    transform: translateX(10px);
+}
+
+.footer-nav ul li a:hover::before,
+.footer-social ul li a:hover::before {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.footer-social h3 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 1.2rem;
+    color: #ffffff;
+    margin-bottom: 20px;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+.footer-social h3::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 40px;
+    height: 2px;
+    background: #DD0000;
+}
+
+.footer-social ul {
+    display: flex;
+    gap: 15px;
+}
+
+.footer-social ul li a {
+    width: 45px;
+    height: 45px;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.05);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff;
+    text-decoration: none;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    font-size: 18px;
+    padding: 0;
+}
+
+.footer-social ul li a:hover {
+    background: #DD0000;
+    transform: translateY(-5px) rotate(5deg);
+    box-shadow: 0 5px 15px rgba(221, 0, 0, 0.3);
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 30px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-bottom p {
+    color: #b3b3b3;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.footer-bottom a {
+    color: #DD0000;
+    text-decoration: none;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    font-weight: 500;
+}
+
+.footer-bottom a:hover {
+    color: #ffffff;
+    text-decoration: underline;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 1200px) {
+    .footer-main-content {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 40px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .footer-container {
+        padding: 0 20px;
+    }
+
+    .footer-main-content {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .footer-brand,
+    .footer-nav,
+    .footer-social {
+        text-align: center;
+    }
+
+    .footer-brand h2::after,
+    .footer-social h3::after {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .footer-nav ul li a,
+    .footer-social ul li a {
+        padding-left: 0;
+    }
+
+    .footer-nav ul li a::before,
+    .footer-social ul li a::before {
+        display: none;
+    }
+
+    .footer-social ul {
+        justify-content: center;
+    }
+}
+
+/* Animation */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.footer-main-content > * {
+    animation: fadeInUp 0.6s ease-out forwards;
+    opacity: 0;
+}
+
+.footer-main-content > *:nth-child(1) { animation-delay: 0.1s; }
+.footer-main-content > *:nth-child(2) { animation-delay: 0.2s; }
+.footer-main-content > *:nth-child(3) { animation-delay: 0.3s; }
 
 /* ----------------------------------------------respondsive web page start here ---------------------------------- */
 

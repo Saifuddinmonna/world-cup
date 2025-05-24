@@ -12,6 +12,7 @@
     <!-- css link here -->
     <link rel="stylesheet" href="styles/style.css">
     <link rel="stylesheet" href="styles/navbar.css">
+    <link rel="stylesheet" href="styles/section-modern.css"> <!-- Added new stylesheet for blog -->
 </head>
 
 <body>
@@ -39,24 +40,23 @@
     </nav>
     <header>
         
-        <div class="header-info">
-            <div class="text-align">
-                 <h1 class="header-title">
+        <div class="header-content-wrapper"> <!-- Wrapper for flex layout -->
+            <div class="header-info">
+                <h1 class="header-title animate-on-load">
                 The Greatest show on the earth 
                  </h1>
-                <p class="header-paragraph">
+                <p class="header-paragraph animate-on-load delay-1">
                     Contrary to popular belief, Lorem Ipsum is not simply 
                     random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old.
                 </p>
+                <a href="#" class="header-btn modern-btn animate-on-load delay-2"> <!-- Changed button to <a> for better semantics if it's a link -->
+                    Watch Live <i class="fa-solid fa-arrow-right"></i>
+                </a>
              </div>
-           
-            <div><button class="header-btn"><
-                <a href="">Watch Live <i class="fa-solid fa-arrow-right"></i></a>
-            </button></div>
             
-        </div>
-        <div class="header-thumbnail">
-           <img src="images/Banner Image.png" alt="" class="header-image">
+            <div class="header-thumbnail">
+               <img src="images/Banner Image.png" alt="Football player celebrating" class="header-image animate-on-load delay-3">
+            </div>
         </div>
     </header>
     <!-- -------------------------
@@ -65,20 +65,9 @@
    
    
     <main>
-        <section class="nab-article-fkex">
+        <section class="nab-article-flex">
 
 
-            <!-- -------------------------
-        nav start here 
-    ------------------------ -->
-            <nav>
-                <button class="nab-btn"> <a href="upcoming.html">Upcoming Match</a></button>
-                <button class="nab-btn"> <a href="all-group.html">All Group</a></button>
-                <button class="nab-btn red"> <a href="index.html">Blog</a></button>
-            </nav>
-            <!-- -------------------------
-       nav end here 
-    ------------------------ -->
 
      <!-- -------------------------
         article start here 
@@ -94,38 +83,43 @@
          
          
     </main>
-            <div class="view-all"><a href="" class="view-btn">View All</a></div>
+            <div class="view-all-container"><a href="#" class="view-all-btn modern-btn">View All</a></div>
     <!-- -------------------------
         footer start here 
     ------------------------ -->
     <footer>
         <div class="footer-container">
-            <div class="header-elements-center">
-                   <div class="footer-title">
-                <h2>Goal</h2>
-                 </div>
-                 <div class="footer-description">
-                     <button class="footer-button"><a href=""> &nbsp Contact Us</a></button>
-                      <button class="footer-button"><a href="">Terms of Service</a></button>
-                     <button class="footer-button"><a href="">Privacy Policy </a> </button>
-                     <button class="footer-button"><a href="">Privacy Settings </a></button>
-                     <button class="footer-button"><a href=""> Goal Live App </a></button>
-
-                 </div>
-                 <div class="social-app">
-                     <a href="https://www.facebook.com/"><i class="fa-brands fa-facebook-square"></i> Facebook</a>
-                     <a href="https://twitter.com/i/flow/login"><i class="fa-brands fa-twitter-square"></i> Twitter</a>
-                <a href="https://www.instagram.com/accounts/login/"><i class="fa-brands fa-instagram-square"></i> Instagram</a>
+            <div class="footer-main-content">
+                <div class="footer-brand">
+                    <h2>Goal</h2>
+                </div>
+                <nav class="footer-nav" aria-label="Footer navigation">
+                    <ul>
+                        <li><a href="contact.html">Contact Us</a></li>
+                        <li><a href="terms.html">Terms of Service</a></li>
+                        <li><a href="privacy.html">Privacy Policy</a></li>
+                        <li><a href="privacy-settings.html">Privacy Settings</a></li>
+                        <li><a href="app.html">Goal Live App</a></li>
+                    </ul>
+                </nav>
+                <div class="footer-social">
+                    <h3>Connect With Us</h3>
+                    <ul>
+                        <li><a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a></li>
+                        <li><a href="https://twitter.com/" target="_blank" rel="noopener noreferrer" aria-label="Twitter"><i class="fab fa-twitter"></i></a></li>
+                        <li><a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fab fa-instagram"></i></a></li>
+                        <li><a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a></li>
+                    </ul>
+                </div>
             </div>
-            </div>
-         
-            <div class="footer-copyright">
+            <div class="footer-bottom">
                 <p>
-                     Copyright <i class="fa-regular fa-copyright"></i>2022.&nbsp <a href="https://github.com/Saifuddinmonna"> Saifuddin Munna<a> . &nbsp All Rights Reserved
+                    Copyright &copy; <span id="footerCurrentYear">2024</span> <a href="https://github.com/Saifuddinmonna" target="_blank" rel="noopener noreferrer">Saifuddin Munna</a>. All Rights Reserved.
                 </p>
             </div>
         </div>
     </footer>
+
     <!-- -------------------------
        footer end here 
     ------------------------ -->
@@ -168,6 +162,11 @@
             link.classList.add('active');
         });
     });
+
+    // Dynamically set footer year (optional, but good practice)
+    const yearSpan = document.getElementById('footerCurrentYear');
+    if (yearSpan) yearSpan.textContent = new Date().getFullYear();
+
     </script>
 </body>
 </html>
